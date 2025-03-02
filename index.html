@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourglass Recycling Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container" id="navlist">
+            <h1>Hourglass Recycling Foundation</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#leaderboard">Top Recyclers</a></li>
+                    <li><a href="#apply">Apply to be a box host</a></li>
+                    <li id="openPopupBtn">Log in/Sign up</li>
+                </ul>
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <span class="close-btn" id="closePopupBtn">&times;</span>
+                        <div class="form-container">
+                            <form id="loginForm" class="form">
+                                <h2>Login</h2>
+                                <label for="loginEmail">Email:</label>
+                                <input type="email" id="loginEmail" name="loginEmail" required>
+                                <label for="loginPassword">Password:</label>
+                                <input type="password" id="loginPassword" name="loginPassword" required>
+                                <button type="submit">Login</button>
+                            </form>
+                            <form id="signupForm" class="form">
+                                <h2>Signup</h2>
+                                <label for="signupEmail">Email:</label>
+                                <input type="email" id="signupEmail" name="signupEmail" required>
+                                <label for="signupPassword">Password:</label>
+                                <input type="password" id="signupPassword" name="signupPassword" required>
+                                <button type="submit">Signup</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to  Hourglass Recycling Foundation</h2>
+            <img src="logo.png" class="logo" width="250px">
+            <p>We are dedicated to promoting glass recycling and environmental sustainability.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Hourglass Recycling Foundation is committed to making a positive impact on the environment by promoting glass recycling initiatives. We work tirelessly to raise awareness about the importance of recycling and provide resources to support sustainable practices.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="typing">If you have any questions or would like to get involved, please don't hesitate to reach out to us.</p>
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="fae71228-a180-4834-afc3-032db97a2924">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="apply" class="contact">
+        <div class="container">
+            <h2>Apply to Have a Glass Bin in your Neighborhood</h2>
+        </div>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="fae71228-a180-4834-afc3-032db97a2924">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="hood" placeholder="Your Neighborhood" required>
+            <input type="text" name="school" placeholder="Your School" required>
+            <textarea name="message" placeholder="Additional Information: Age, Grade, Etc;" required></textarea>
+            <button type="submit" class="btn">Submit Application</button>
+        </form>
+    </section>
+
+    <section id="leaderboard">
+        <h1>Recycling Leaderboard</h1>
+        <div class="leaderboard">
+            <div class="place" style="background:white;">
+                <h2 style="text-align: center;">Place</h2>
+                <hr class="hr">
+            </div>
+            <div class="glass" style="background:white;">
+                <h2 style="text-align: center;">Glass Recycled</h2>
+                <hr class="hr">
+            </div>
+            <div class="names" style="background:white;">
+                <h2 style="text-align: center;">Names</h2>
+                <hr class="hr">
+            </div>
+        </div>
+    </section>
+    <div class="empty"></div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hourglass Recycling Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.scrollY > 0) {
+                header.classList.add('small');
+            } else {
+                header.classList.remove('small');
+            }
+        });
+    </script>
+</body>
+</html>
