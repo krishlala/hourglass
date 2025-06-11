@@ -98,10 +98,6 @@ ul:hover li a:not(:hover) {
 .hero h2 {
     font-size: 48px;
     margin-bottom: 40px;
-    background-image: url('https://cdn.route-fifty.com/media/img/cd/2020/02/14/shutterstock_1105042415/route-fifty-lead-image.jpg?1627433838');
-  background-repeat: repeat;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             margin-top: 200px;
             text-align: center;
             font-weight: bold;
@@ -115,10 +111,6 @@ ul:hover li a:not(:hover) {
     font-size: 18px;
     margin-bottom: 30px;
     margin-bottom: 40px;
-    background-image: url('https://cdn.route-fifty.com/media/img/cd/2020/02/14/shutterstock_1105042415/route-fifty-lead-image.jpg?1627433838');
-  background-repeat: repeat;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             margin-top: 100px;
             text-align: center;
             font-weight: bold;
