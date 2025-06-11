@@ -101,21 +101,20 @@
 
     <section id="leaderboard">
         <h1>Recycling Leaderboard</h1>
-        <div class="leaderboard">
-            <div class="place" style="background:white;">
-                <h2 style="text-align: center;">Place</h2>
-                <hr class="hr">
-            </div>
-            <div class="glass" style="background:white;">
-                <h2 style="text-align: center;">Glass Recycled</h2>
-                <hr class="hr">
-            </div>
-            <div class="names" style="background:white;">
-                <h2 style="text-align: center;">Names</h2>
-                <hr class="hr">
-            </div>
-        </div>
+        <table id="leaderboard-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f0f0f0;">
+                    <th style="border: 1px solid #000000; padding: 8px;">Place</th>
+                    <th style="border: 1px solid #000000; padding: 8px;">Name</th>
+                    <th style="border: 1px solid #000000; padding: 8px;">Glass Recycled</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Airtable data rows will be injected here -->
+            </tbody>
+        </table>
     </section>
+    
     <div class="empty"></div>
     
     <footer>
@@ -134,5 +133,94 @@
             }
         });
     </script>
+
+<script>
+    const token = "pathiKExL9MWBgEio.e6fd1bbd1deb43b024ce6245527e5178985fee9dc5b65c8f9304da6cc57f94b1";
+const baseId = "appjGCPWUcCwlhE8m";
+const tableName = "Sheet1";
+
+fetch(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+})
+  .then((res) => res.json())
+  .then((data) => {
+    const tableBody = document.querySelector("#leaderboard-table tbody");
+
+    data.records.forEach((record, index) => {
+      const row = document.createElement("tr");
+
+      row.innerHTML = `
+        <td style="border: 1px solid #000000; padding: 8px;">${index + 1}</td>
+        <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Name || ''}</td>
+        <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Glass || 0}</td>
+      `;
+
+      tableBody.appendChild(row);
+    });
+  });
+
+</script>
+
+<style>
+    #leaderboard {
+  padding: 40px 20px;
+  background-color: #000000;
+}
+
+#leaderboard h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+#leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#leaderboard-table thead tr {
+  background-color: #2c3e50;
+  color: #000000;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+#leaderboard-table th, 
+#leaderboard-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+#leaderboard-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#leaderboard-table tbody tr:hover {
+  background-color: #d1e7fd;
+  cursor: pointer;
+}
+
+#leaderboard-table td:first-child {
+  font-weight: 700;
+  color: #2980b9;
+}
+
+#leaderboard-table tbody{
+    color: #000000;
+}
+</style>
+  
 </body>
 </html>
