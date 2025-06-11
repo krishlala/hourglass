@@ -64,6 +64,7 @@ button {
   color: inherit !important;
   font-family: 'Steelfish Rg', 'helveticaneue', helvetica, arial, sans-serif !important;
   border: none !important;
+  font-weight: bold !important;
   box-shadow: none !important;
   text-transform: uppercase !important;
 }
