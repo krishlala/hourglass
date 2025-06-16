@@ -561,3 +561,47 @@ header.small {
 .logo {
   border-radius: 1000px;
 }
+
+
+
+.job-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+  }
+  
+  .job-card {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.25);
+    transition: transform 0.2s ease;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    border-color: rgba(43, 176, 43, 1);
+  }
+  
+  .job-card h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .job-card p {
+    margin: 5px 0;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  
+  .promotion-card {
+    background-color: #000000;
+    border: 2px solid #ffffff;
+  }
+  
