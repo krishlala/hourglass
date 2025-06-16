@@ -137,32 +137,39 @@
 
 <script>
     const token = "pathiKExL9MWBgEio.e6fd1bbd1deb43b024ce6245527e5178985fee9dc5b65c8f9304da6cc57f94b1";
-const baseId = "appjGCPWUcCwlhE8m";
-const tableName = "Sheet1";
-
-fetch(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-})
-  .then((res) => res.json())
-  .then((data) => {
-    const tableBody = document.querySelector("#leaderboard-table tbody");
-
-    data.records.forEach((record, index) => {
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-        <td style="border: 1px solid #000000; padding: 8px;">${index + 1}</td>
-        <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Name || ''}</td>
-        <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Glass || 0}</td>
-      `;
-
-      tableBody.appendChild(row);
-    });
-  });
-
-</script>
+    const baseId = "appjGCPWUcCwlhE8m";
+    const tableName = "Sheet1";
+  
+    fetch(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const tableBody = document.querySelector("#leaderboard-table tbody");
+  
+        // Sort the records by 'Glass' field descending
+        const sortedRecords = data.records.sort((a, b) => {
+          const aGlass = a.fields.Glass || 0;
+          const bGlass = b.fields.Glass || 0;
+          return bGlass - aGlass; // Descending
+        });
+  
+        sortedRecords.forEach((record, index) => {
+          const row = document.createElement("tr");
+  
+          row.innerHTML = `
+            <td style="border: 1px solid #000000; padding: 8px;">${index + 1}</td>
+            <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Name || ''}</td>
+            <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Glass || 0}</td>
+          `;
+  
+          tableBody.appendChild(row);
+        });
+      });
+  </script>
+  
 
 <style>
     #leaderboard {
