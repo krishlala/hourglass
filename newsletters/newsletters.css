@@ -302,3 +302,15 @@ footer {
   footer p {
     font-size: 16px;
   }
+
+  #newsletterFrameContainer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#newsletterFrame {
+    width: 60vw;         /* Takes 60% of the viewport width */
+    height: 100vh;        /* Takes 100% of the viewport height */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
