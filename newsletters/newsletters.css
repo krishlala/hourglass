@@ -20,6 +20,8 @@ a:active {
   background: none !important;
 }
 
+
+
 h1,
 h2,
 h3,
@@ -313,4 +315,23 @@ footer {
     height: 100vh;        /* Takes 100% of the viewport height */
     border: 1px solid #ccc;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+.bounce {
+  transition: transform;
+}
+
+header.small {
+  padding: 10px 0; /* Adjust padding as needed */
+  margin-top: -50px;
+  font-size: 20px; /* Adjust font size as needed */
 }
