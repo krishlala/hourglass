@@ -311,7 +311,7 @@ footer {
 }
 
 #newsletterFrame {
-    width: 60vw;         /* Takes 60% of the viewport width */
+    width: 75vw;         /* Takes 60% of the viewport width */
     height: 100vh;        /* Takes 100% of the viewport height */
     border: 1px solid #ccc;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
