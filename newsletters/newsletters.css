@@ -272,3 +272,33 @@ ul:hover li a:not(:hover) {
     opacity: 1;
     transform: translateY(0);
 }
+footer {
+    background: rgb(8, 49, 58);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(8, 49, 58, 1) 0%,
+      rgba(43, 176, 43, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(8, 49, 58, 1) 0%,
+      rgba(43, 176, 43, 1) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(8, 49, 58, 1) 0%,
+      rgba(43, 176, 43, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr='#08313a',
+      endColorstr='#2bb02b',
+      GradientType=1
+    ); /* New shade of green */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 16px;
+  }
