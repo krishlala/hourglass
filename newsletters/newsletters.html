@@ -93,7 +93,7 @@
                 const year = yearSelect.value;
 
                 if (month && year) {
-                    const filePath = `newsletters/${year}-${month}.pdf`; // assumes PDF files like newsletters/2024-06.pdf
+                    const filePath = `${year}-${month}.pdf`; // assumes PDF files like newsletters/2024-06.pdf
                     frame.src = filePath;
                     frameContainer.style.display = 'block';
                 } else {
