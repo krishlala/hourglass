@@ -1,302 +1,435 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hourglass Recycling Foundation</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
-    <link
-  href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap"
-  rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hourglass Recycling Foundation — promoting glass recycling and environmental sustainability in Forsyth County.">
+  <title>Hourglass Recycling Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="hourglasslogo.png">
-
 </head>
 <body>
-    <header>
-        <div class="container" id="navlist">
-            <h1>Hourglass Recycling</h1>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#locations">Locations</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#apply">Apply to be a box host</a></li>
-                    <li><a href="#leaderboard">Top Recyclers</a></li>
-                    <li><a href="/newsletters/newsletters.html">Newsletters</a></li>
-                </ul>
-                <div id="popup" class="popup">
-                    <div class="popup-content">
-                        <span class="close-btn" id="closePopupBtn">&times;</span>
-                        <div class="form-container">
-                            <form id="loginForm" class="form">
-                                <h2>Login</h2>
-                                <label for="loginEmail">Email:</label>
-                                <input type="email" id="loginEmail" name="loginEmail" required>
-                                <label for="loginPassword">Password:</label>
-                                <input type="password" id="loginPassword" name="loginPassword" required>
-                                <button type="submit">Login</button>
-                            </form>
-                            <form id="signupForm" class="form">
-                                <h2>Signup</h2>
-                                <label for="signupEmail">Email:</label>
-                                <input type="email" id="signupEmail" name="signupEmail" required>
-                                <label for="signupPassword">Password:</label>
-                                <input type="password" id="signupPassword" name="signupPassword" required>
-                                <button type="submit">Signup</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <h2>Welcome to  Hourglass Recycling Foundation</h2>
-            <img src="hourglasslogo.png" class="logo" width="250px">
-            <p>We are dedicated to promoting glass recycling and environmental sustainability.</p>
-            <a href="#about" class="btn">Learn More</a>
-        </div>
-    </section>
+<div id="page-transition"></div>
+<div id="scroll-progress" style="position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#08313a,#2bb02b);z-index:1001;width:0;transition:width 0.1s;pointer-events:none"></div>
+<div id="toast-container" aria-live="polite"></div>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>Hourglass Recycling Foundation is committed to making a positive impact on the environment by promoting glass recycling initiatives. We work tirelessly to raise awareness about the importance of recycling and provide resources to support sustainable practices.</p>
-        </div>
-    </section>
-
-    <section id="locations" class="about">
-        <div class="container">
-            <h2>Locations</h2>
-            <p>The Reserve of Old Atlanta</p>
-            <p>Champions Run</p>
-            <p>Riverbrooke</p>
-            <h4>Coming Soon</h4>
-            <p>Other Forsyth Neighborhoods</p>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p class="typing">If you have any questions or would like to get involved, please don't hesitate to reach out to us.</p>
-            <form action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="7fdea984-f66f-4a11-8572-39d68b636d2a">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <section id="apply" class="contact">
-        <div class="container">
-            <h2>Apply for a Position</h2>
-            <p class="details">Current Available Positions include:<br></p>
-        </div>
-        <div class="job-cards">
-  <div class="job-card">
-    <h2>Data Entry Coordinator</h2>
-    <p><strong>Role:</strong> Enter and maintain bottle data in the system.</p>
-    <p><strong>Ideal For:</strong> Detail-oriented students good with spreadsheets.</p>
-    <p><strong>Responsibilities:</strong><br>
-      - Log bottle counts from form submissions.<br>
-      - Check for errors and duplicates.<br>
-      - Keep leaderboard accurate.</p>
-  </div>
-
-  <div class="job-card">
-    <h2>Recycling Captain</h2>
-    <p><strong>Role:</strong> Maintain a community recycling bin and drop off collected items.</p>
-    <p><strong>Ideal For:</strong> Middle school or underclassmen students.</p>
-    <p><strong>Responsibilities:</strong><br>
-      - Host and manage a recycling box.<br>
-      - Deliver recyclables weekly.<br>
-      - Submit collection updates via form.</p>
-  </div>
-
-  <div class="job-card">
-    <h2>Neighborhood Recycling Manager</h2>
-    <p><strong>Role:</strong> Oversee local captains and communicate with leadership.</p>
-    <p><strong>Ideal For:</strong> Juniors or seniors with leadership skills.</p>
-    <p><strong>Responsibilities:</strong><br>
-      - Monitor Recycling Captains.<br>
-      - Ensure bins are maintained.<br>
-      - Act as a mentor + communication bridge.</p>
-  </div>
-  <div class="job-card">
-    <h2>Marketing & Communications Coordinator</h2>
-<p><strong>Role:</strong> Lead outreach through newsletters, marketing, and digital content.</p>
-<p><strong>Ideal For:</strong> Students interested in writing, design, or media.</p>
-<p><strong>Responsibilities:</strong><br>
-  - Write/manage monthly newsletters.<br>
-  - Create marketing materials.<br>
-  - Post content online.</p>
-  </div>
-  <div class="job-card promotion-card">
-    <h2>🎓 Promotion Path</h2>
-    <p><strong>When a Manager graduates:</strong><br>
-    - Their Recycling Captain gets promoted.<br>
-    - The new Manager recruits a new Captain.<br>
-    - Keeps the system sustainable and student-led.</p>
+<div id="shortcuts-modal" role="dialog" aria-label="Keyboard shortcuts">
+  <div class="shortcuts-panel card-glass">
+    <div class="shortcuts-title">Keyboard Shortcuts</div>
+    <div class="shortcut-row"><span>Focus search</span><span class="kbd-hint"><kbd>/</kbd></span></div>
+    <div class="shortcut-row"><span>Toggle dark mode</span><span class="kbd-hint"><kbd>D</kbd></span></div>
+    <div class="shortcut-row"><span>Navigate sections</span><span class="kbd-hint"><kbd>1</kbd> to <kbd>6</kbd></span></div>
+    <div class="shortcut-row"><span>Show shortcuts</span><span class="kbd-hint"><kbd>?</kbd></span></div>
+    <div class="shortcut-row"><span>Close</span><span class="kbd-hint"><kbd>Esc</kbd></span></div>
   </div>
 </div>
-<p class="warn">Before applying for Recycling Captain or Neighborhood Recycling Manager, ensure that your neighborhood isn't already listed in the <a class="ensure" href=#locations>locations section</a></p>
-        <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="7fdea984-f66f-4a11-8572-39d68b636d2a">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="hood" placeholder="Your Neighborhood" required>
-            <input type="text" name="school" placeholder="Your School" required>
-            <textarea name="message" placeholder="Enter the position you wish to apply for" required></textarea>
-            <button type="submit" class="btn">Submit Application</button>
-        </form>
-    </section>
 
-    <section id="leaderboard">
-        <h1>Recycling Leaderboard</h1>
-        <table id="leaderboard-table" style="width: 100%; border-collapse: collapse;">
-            <thead>
-                <tr style="background: #f0f0f0;">
-                    <th style="border: 1px solid #000000; padding: 8px;">Place</th>
-                    <th style="border: 1px solid #000000; padding: 8px;">Name</th>
-                    <th style="border: 1px solid #000000; padding: 8px;">Glass Recycled</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Airtable data rows will be injected here -->
-            </tbody>
-        </table>
-    </section>
-    
-    <div class="empty"></div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Hourglass Recycling Foundation. All rights reserved.</p>
-            <a href="https://www.instagram.com/hourglassrecycling/"><img class="insta" src="insta.jpg"></a>
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#home">
+      <img src="hourglasslogo.png" alt="Hourglass logo" loading="lazy">
+      Hourglass Recycling
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#locations">Locations</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#apply">Apply</a></li>
+      <li><a href="#leaderboard">Leaderboard</a></li>
+      <li><a href="/newsletters/newsletters.html">Newsletters</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="nav-search" role="search">
+        <span class="search-icon" aria-hidden="true">&#128269;</span>
+        <input id="search-input" type="search" placeholder="Search..." autocomplete="off" aria-label="Search sections" aria-autocomplete="list" aria-controls="search-dropdown">
+        <div id="search-dropdown" class="search-dropdown" role="listbox"></div>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme (D)">&#127769;</button>
+      <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+  <ul role="list">
+    <li><a href="#home" class="mobile-nav-link">Home</a></li>
+    <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+    <li><a href="#locations" class="mobile-nav-link">Locations</a></li>
+    <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    <li><a href="#apply" class="mobile-nav-link">Apply</a></li>
+    <li><a href="#leaderboard" class="mobile-nav-link">Leaderboard</a></li>
+    <li><a href="/newsletters/newsletters.html" class="mobile-nav-link">Newsletters</a></li>
+  </ul>
+</div>
+
+<section id="home" aria-label="Hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+  </div>
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:48px">
+      <div class="hero-content">
+        <div class="hero-badge" data-animate="fade-up">
+          <span class="dot"></span>
+          Active in Forsyth County, GA
         </div>
-    </footer>
+        <h1 class="hero-title" data-animate="fade-up" data-delay="80">
+          Recycling for a<br><span class="accent">Greener Future</span>
+        </h1>
+        <p class="hero-description" data-animate="fade-up" data-delay="160">
+          Hourglass Recycling Foundation promotes glass recycling and environmental sustainability — one neighborhood at a time.
+        </p>
+        <div class="hero-cta" data-animate="fade-up" data-delay="240">
+          <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+          <a href="#apply" class="btn btn-outline btn-lg">Get Involved</a>
+        </div>
+        <div class="hero-stats" data-animate="fade-up" data-delay="320">
+          <div class="hero-stat">
+            <span class="stat-value" data-count="3" data-suffix="+">3+</span>
+            <span class="stat-label">Active Neighborhoods</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value" data-count="100" data-suffix="+">100+</span>
+            <span class="stat-label">Bottles Recycled</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value" data-count="4">4</span>
+            <span class="stat-label">Open Positions</span>
+          </div>
+        </div>
+      </div>
+      <div data-animate="zoom" data-delay="200" style="flex-shrink:0">
+        <img src="hourglasslogo.png" alt="Hourglass Recycling Foundation logo" class="hero-logo" width="200" height="200">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        window.addEventListener('scroll', function() {
-            var header = document.querySelector('header');
-            if (window.scrollY > 0) {
-                header.classList.add('small');
-            } else {
-                header.classList.remove('small');
-            }
-        });
-    </script>
+<section id="about" aria-label="About Us">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="section-label" data-animate="fade-right">Who We Are</span>
+        <h2 class="section-title" data-animate="fade-right" data-delay="60">Making Recycling Easy &amp; Accessible</h2>
+        <div class="divider" data-animate="fade-right" data-delay="100"></div>
+        <p class="section-subtitle" data-animate="fade-right" data-delay="140">
+          Hourglass Recycling Foundation is a student-led nonprofit committed to making a positive impact on the environment by promoting glass recycling initiatives across Forsyth County neighborhoods.
+        </p>
+        <div class="about-features" data-animate="fade-right" data-delay="200">
+          <div class="about-feature"><span class="check">&#10003;</span>Community-hosted glass recycling bins</div>
+          <div class="about-feature"><span class="check">&#10003;</span>Monthly newsletters &amp; updates</div>
+          <div class="about-feature"><span class="check">&#10003;</span>Student leadership opportunities</div>
+          <div class="about-feature"><span class="check">&#10003;</span>Transparent leaderboard tracking</div>
+        </div>
+      </div>
+      <div class="about-visual" data-animate="fade-left" data-delay="100">
+        <div class="about-card-stack">
+          <div class="about-card-item card-glass">
+            <div class="about-card-icon">&#9851;</div>
+            <div class="about-card-title">Glass Recycling</div>
+            <div class="about-card-text">Community-driven collection every week</div>
+          </div>
+          <div class="about-card-item card-glass">
+            <div class="about-card-icon">&#127807;</div>
+            <div class="about-card-title">Sustainability</div>
+            <div class="about-card-text">Reducing landfill waste, one bottle at a time</div>
+          </div>
+          <div class="about-card-item card-glass">
+            <div class="about-card-icon">&#127891;</div>
+            <div class="about-card-title">Student Led</div>
+            <div class="about-card-text">Empowering the next generation of leaders</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script>
-    const token = "pathiKExL9MWBgEio.e6fd1bbd1deb43b024ce6245527e5178985fee9dc5b65c8f9304da6cc57f94b1";
-    const baseId = "appjGCPWUcCwlhE8m";
-    const tableName = "Sheet1";
-  
-    fetch(`https://api.airtable.com/v0/${baseId}/${tableName}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const tableBody = document.querySelector("#leaderboard-table tbody");
-  
-        // Sort the records by 'Glass' field descending
-        const sortedRecords = data.records.sort((a, b) => {
-          const aGlass = a.fields.Glass || 0;
-          const bGlass = b.fields.Glass || 0;
-          return bGlass - aGlass; // Descending
-        });
-  
-        sortedRecords.forEach((record, index) => {
-          const row = document.createElement("tr");
-  
-          row.innerHTML = `
-            <td style="border: 1px solid #000000; padding: 8px;">${index + 1}</td>
-            <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Name || ''}</td>
-            <td style="border: 1px solid #000000; padding: 8px;">${record.fields.Glass || 0}</td>
-          `;
-  
-          tableBody.appendChild(row);
-        });
-      });
-  </script>
-  
+<section id="locations" aria-label="Locations">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-3)" data-animate="fade-up">
+      <span class="section-label">Where We Operate</span>
+    </div>
+    <h2 class="section-title text-center" data-animate="fade-up" data-delay="60">Our Locations</h2>
+    <p class="section-subtitle text-center" style="margin:0 auto var(--sp-4)" data-animate="fade-up" data-delay="120">
+      Find a recycling drop-off near you. New neighborhoods added regularly.
+    </p>
+    <div class="locations-grid" data-stagger>
+      <div class="location-card card-glass" tabindex="0" role="button">
+        <div class="location-icon">&#127968;</div>
+        <div class="location-name">The Reserve of Old Atlanta</div>
+        <div class="location-detail">Forsyth County, GA</div>
+        <span class="location-badge active">Active</span>
+        <div class="location-expand">
+          <p style="margin-top:12px;font-size:var(--text-sm);color:var(--text-muted)">Weekly glass recycling pickup available. Contact us for bin placement details.</p>
+        </div>
+      </div>
+      <div class="location-card card-glass" tabindex="0" role="button">
+        <div class="location-icon">&#127942;</div>
+        <div class="location-name">Champions Run</div>
+        <div class="location-detail">Forsyth County, GA</div>
+        <span class="location-badge active">Active</span>
+        <div class="location-expand">
+          <p style="margin-top:12px;font-size:var(--text-sm);color:var(--text-muted)">Weekly glass recycling pickup available. Contact us for bin placement details.</p>
+        </div>
+      </div>
+      <div class="location-card card-glass" tabindex="0" role="button">
+        <div class="location-icon">&#127754;</div>
+        <div class="location-name">Riverbrooke</div>
+        <div class="location-detail">Forsyth County, GA</div>
+        <span class="location-badge active">Active</span>
+        <div class="location-expand">
+          <p style="margin-top:12px;font-size:var(--text-sm);color:var(--text-muted)">Weekly glass recycling pickup available. Contact us for bin placement details.</p>
+        </div>
+      </div>
+      <div class="location-card card-glass" tabindex="0" role="button">
+        <div class="location-icon">&#128506;</div>
+        <div class="location-name">Other Forsyth Neighborhoods</div>
+        <div class="location-detail">Forsyth County, GA</div>
+        <span class="location-badge coming-soon">Coming Soon</span>
+        <div class="location-expand">
+          <p style="margin-top:12px;font-size:var(--text-sm);color:var(--text-muted)">We're expanding! Apply to become a Recycling Captain to bring us to your neighborhood.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<style>
-    #leaderboard {
-  padding: 40px 20px;
-  background-color: #000000;
-}
+<section id="contact" aria-label="Contact Us">
+  <div class="container">
+    <span class="section-label" data-animate="fade-up">Get in Touch</span>
+    <h2 class="section-title" data-animate="fade-up" data-delay="60">Contact Us</h2>
+    <div class="contact-grid">
+      <div class="contact-info" data-animate="fade-right" data-delay="120">
+        <p class="section-subtitle" style="margin-bottom:var(--sp-6)">Have questions or want to get involved? We'd love to hear from you.</p>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128231;</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">hourglassrecycling@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128205;</div>
+          <div>
+            <div class="contact-item-label">Area</div>
+            <div class="contact-item-value">Forsyth County, Georgia</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128247;</div>
+          <div>
+            <div class="contact-item-label">Instagram</div>
+            <div class="contact-item-value">@hourglassrecycling</div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-glass" data-animate="fade-left" data-delay="160">
+        <form data-form="contact" novalidate>
+          <input type="hidden" name="access_key" value="7fdea984-f66f-4a11-8572-39d68b636d2a">
+          <input type="hidden" name="subject" value="New Contact Form Submission">
+          <div class="form-group">
+            <label class="form-label" for="contact-name">Name <span style="color:#ef4444">*</span></label>
+            <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-email">Email <span style="color:#ef4444">*</span></label>
+            <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message">Message <span style="color:#ef4444">*</span></label>
+            <textarea class="form-input" id="contact-message" name="message" placeholder="How can we help?" required data-maxlength="500"></textarea>
+            <div class="char-counter">0 / 500</div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
-#leaderboard h1 {
-  text-align: center;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: #ffffff;
-}
+<section id="apply" aria-label="Apply for a Position">
+  <div class="container">
+    <div class="apply-header">
+      <span class="section-label" data-animate="fade-up">Join the Team</span>
+      <h2 class="section-title" data-animate="fade-up" data-delay="60">Apply for a Position</h2>
+      <p class="section-subtitle" data-animate="fade-up" data-delay="120">We're a student-led foundation with open roles at every level. Hover a card to see full details.</p>
+    </div>
+    <div class="job-cards-grid" data-stagger>
+      <div class="job-card card-glass" tabindex="0">
+        <div class="job-card-header">
+          <div class="job-icon">&#128202;</div>
+          <div class="job-title">Data Entry Coordinator</div>
+        </div>
+        <span class="job-tag">Detail-Oriented</span>
+        <p class="job-description">Enter and maintain bottle data in the system with accuracy and care.</p>
+        <div class="job-details">
+          <div class="job-detail-item">Log bottle counts from form submissions</div>
+          <div class="job-detail-item">Check for errors and duplicates</div>
+          <div class="job-detail-item">Keep leaderboard accurate and up to date</div>
+          <div class="job-detail-item">Ideal for students good with spreadsheets</div>
+        </div>
+      </div>
+      <div class="job-card card-glass" tabindex="0">
+        <div class="job-card-header">
+          <div class="job-icon">&#9851;</div>
+          <div class="job-title">Recycling Captain</div>
+        </div>
+        <span class="job-tag">Entry Level</span>
+        <p class="job-description">Maintain a community recycling bin and drop off collected items weekly.</p>
+        <div class="job-details">
+          <div class="job-detail-item">Host and manage a recycling box in your neighborhood</div>
+          <div class="job-detail-item">Deliver recyclables on a weekly basis</div>
+          <div class="job-detail-item">Submit collection updates via form</div>
+          <div class="job-detail-item">Great for middle school or underclassmen</div>
+        </div>
+      </div>
+      <div class="job-card card-glass" tabindex="0">
+        <div class="job-card-header">
+          <div class="job-icon">&#127968;</div>
+          <div class="job-title">Neighborhood Recycling Manager</div>
+        </div>
+        <span class="job-tag">Leadership</span>
+        <p class="job-description">Oversee local captains and communicate with foundation leadership.</p>
+        <div class="job-details">
+          <div class="job-detail-item">Monitor and support Recycling Captains</div>
+          <div class="job-detail-item">Ensure bins are maintained properly</div>
+          <div class="job-detail-item">Act as a mentor and communication bridge</div>
+          <div class="job-detail-item">Ideal for juniors or seniors with leadership skills</div>
+        </div>
+      </div>
+      <div class="job-card card-glass" tabindex="0">
+        <div class="job-card-header">
+          <div class="job-icon">&#128226;</div>
+          <div class="job-title">Marketing &amp; Communications Coordinator</div>
+        </div>
+        <span class="job-tag">Creative</span>
+        <p class="job-description">Lead outreach through newsletters, marketing, and digital content.</p>
+        <div class="job-details">
+          <div class="job-detail-item">Write and manage monthly newsletters</div>
+          <div class="job-detail-item">Create marketing materials and graphics</div>
+          <div class="job-detail-item">Post content across our online channels</div>
+          <div class="job-detail-item">Great for students interested in design or media</div>
+        </div>
+      </div>
+      <div class="job-card promotion-card card-glass" tabindex="0">
+        <div class="job-card-header">
+          <div class="job-icon">&#127891;</div>
+          <div class="job-title">Promotion Path</div>
+        </div>
+        <span class="job-tag">Sustainable Growth</span>
+        <p class="job-description">Our self-sustaining leadership pipeline keeps the foundation running year after year.</p>
+        <div class="job-details">
+          <div class="job-detail-item">When a Manager graduates, their Captain is promoted</div>
+          <div class="job-detail-item">The new Manager recruits a fresh Captain</div>
+          <div class="job-detail-item">Keeps the system student-led and sustainable</div>
+        </div>
+      </div>
+    </div>
+    <div class="warn-banner" data-animate="fade-up">
+      <span>&#9888;&#65039;</span>
+      <span>Before applying for <strong>Recycling Captain</strong> or <strong>Neighborhood Recycling Manager</strong>, please ensure your neighborhood is not already listed in the <a href="#locations">locations section</a> above.</span>
+    </div>
+    <div class="card card-glass" data-animate="fade-up">
+      <h3 style="font-size:var(--text-xl);margin-bottom:var(--sp-6)">Submit Your Application</h3>
+      <form data-form="apply" novalidate>
+        <input type="hidden" name="access_key" value="7fdea984-f66f-4a11-8572-39d68b636d2a">
+        <input type="hidden" name="subject" value="New Position Application">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5)">
+          <div class="form-group">
+            <label class="form-label" for="apply-name">Full Name <span style="color:#ef4444">*</span></label>
+            <input class="form-input" type="text" id="apply-name" name="name" placeholder="Your name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="apply-email">Email <span style="color:#ef4444">*</span></label>
+            <input class="form-input" type="email" id="apply-email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="apply-hood">Neighborhood <span style="color:#ef4444">*</span></label>
+            <input class="form-input" type="text" id="apply-hood" name="hood" placeholder="Your neighborhood" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="apply-school">School <span style="color:#ef4444">*</span></label>
+            <input class="form-input" type="text" id="apply-school" name="school" placeholder="Your school" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="apply-message">Position &amp; Why You'd Like to Join <span style="color:#ef4444">*</span></label>
+          <textarea class="form-input" id="apply-message" name="message" placeholder="Which position are you applying for, and why?" required data-maxlength="600"></textarea>
+          <div class="char-counter">0 / 600</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Submit Application</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-#leaderboard-table {
-  width: 100%;
-  border-collapse: collapse;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
-  background: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-}
+<section id="leaderboard" aria-label="Recycling Leaderboard">
+  <div class="container">
+    <div class="leaderboard-header">
+      <div>
+        <span class="section-label" data-animate="fade-up">Community Rankings</span>
+        <h2 class="section-title" data-animate="fade-up" data-delay="60">Recycling Leaderboard</h2>
+      </div>
+      <div class="leaderboard-tabs" data-animate="fade-up">
+        <button class="leaderboard-tab active" aria-pressed="true">All Time</button>
+      </div>
+    </div>
+    <div id="podium" class="podium" aria-label="Top 3 recyclers" data-animate="fade-up" data-delay="100"></div>
+    <div class="leaderboard-table-wrap" data-animate="fade-up" data-delay="160">
+      <table class="leaderboard-table" aria-label="Recycling leaderboard">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Recycler</th>
+            <th scope="col">Glass Bottles</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
-#leaderboard-table thead tr {
-  background-color: #2c3e50;
-  color: #000000;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="hourglasslogo.png" alt="Hourglass logo" loading="lazy">
+        Hourglass Recycling
+      </div>
+      <ul class="footer-links" role="list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/newsletters/newsletters.html">Newsletters</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/hourglassrecycling/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <img src="insta.jpg" alt="Instagram">
+        </a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2024 Hourglass Recycling Foundation. All rights reserved.
+      &nbsp;|&nbsp;
+      <span class="kbd-hint">Press <kbd>?</kbd> for keyboard shortcuts</span>
+    </div>
+  </div>
+</footer>
 
-#leaderboard-table th, 
-#leaderboard-table td {
-  padding: 12px 20px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-
-#leaderboard-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#leaderboard-table tbody tr:hover {
-  background-color: #d1e7fd;
-  cursor: pointer;
-}
-
-#leaderboard-table td:first-child {
-  font-weight: 700;
-  color: #2980b9;
-}
-
-#leaderboard-table tbody{
-    color: #000000;
-}
-</style>
-<script>
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="LgkNP2zSREKgF_SQhUixQ";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="LgkNP2zSREKgF_SQhUixQ";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();</script>
 <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/e14607b2e4873671caa228c97/7dad61b24a16b204a08585cce.js");</script>
 </body>
 </html>
